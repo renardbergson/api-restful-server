@@ -1,7 +1,11 @@
 const express = require('express')
 
-// requiring routes directory and file
+// importing routes directory and file
 const routes = require('./routes/routes')
+
+// importing database file and function, calling function
+const database = require('./database/database')
+database.connect()
 
 const app = express()
 app.use(express.urlencoded({ extended: true }))

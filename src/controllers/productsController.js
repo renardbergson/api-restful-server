@@ -1,9 +1,9 @@
 const ProductsModel = require('../models/productsModel')
 
-function get (req, res) {
-    res.send({
-        ok: 'I am the get method of the application'
-    })
+async function get (req, res) {
+    const products = await ProductsModel.find()
+
+    res.send(products)
 }
 
 module.exports = {

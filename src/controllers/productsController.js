@@ -30,6 +30,27 @@ async function get (req, res) {
     res.send(products)
 }
 
+async function post (req, res) {
+    const {
+        name: name,
+        brand: brand,
+        price: price
+    } = req.body
+
+    //console.log(req.body)
+
+    const product = new ProductsModel({
+        name: name,
+        brand: brand,
+        price: price
+    })
+
+    product.save()
+
+    res.send('product succesfully saved')
+}
+
 module.exports = {
-    get
+    get,
+    post
 }

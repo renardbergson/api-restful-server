@@ -8,7 +8,8 @@ const database = require('./database/database')
 database.connect()
 
 const app = express()
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json()) 
+// setting server to receive data on json format, we're not receiving data from form anymore
 
 // setting routes
 app.use('/api', routes)

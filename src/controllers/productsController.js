@@ -50,7 +50,36 @@ async function post (req, res) {
     res.send('product succesfully saved')
 }
 
+async function put (req, res) {
+    const { id } = req.params
+
+    const product = await ProductsModel.findOneAndUpdate({ _id:id }, req.body, { new: true })
+    // 1 = which one we want to update
+    // 2 = what we want to update
+    // 3 = whether we want to return the updated file
+
+    res.send({
+        message: 'product succesfully updated',
+        product
+    })
+
+    /* 
+    ==> "findOne" and "updateOne" updates the file but don't returns the updated file as a response!
+    ==> This method is correct as well, if we don't need to return the updated file.
+
+    const product = await ProductsModel.findOne({ _id: id }) // or "find by ID"
+
+    await product.updateOne(req.body) // this way let us update everything that comes in the request
+
+    res.send({
+        message: 'product succesfully updated',
+        product
+    }) 
+    */
+}
+
 module.exports = {
     get,
-    post
+    post,
+    put
 }

@@ -3,7 +3,7 @@ const cors = require('cors')
 const app = express()
 
 // importing routes directory and file
-const routes = require('./routes')
+const routes = require('./routes/routes')
 
 // importing database file and function, calling function
 const database = require('./database/database')

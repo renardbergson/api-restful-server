@@ -2,7 +2,7 @@
   "name": "projeto-api-restful",
   "version": "1.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "src/index.js",
   "engines": {
     "node": "18.x"
   },

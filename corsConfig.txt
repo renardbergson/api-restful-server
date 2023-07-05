@@ -1,0 +1,31 @@
+This is text to remind how CORS work
+
+const allowedOrigins = [
+    'http://127.0.0.1:5500',
+    'http://example.com.br'
+    // remind to to a hard refresh on browser to verify! (shift + refresh)
+]
+
+app.use(cors({
+    origin: function (origin, callback) {
+        let allowed = true
+
+        if (!origin) allowed = true
+        // because mobile app doesn't have an origin
+
+        if (!allowedOrigins.includes(origin)) allowed = false
+        // if the origin is not included in our list
+
+        callback(null, allowed)
+        // the first parameter is a message we want to return to who made the request
+        // the second one is if the response is allowed or not, true or false
+    }
+
+    OOORRR...
+
+    /*
+        app.use(cors({
+            origin: allowedOrigins
+        }))
+    */
+}))

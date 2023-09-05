@@ -1,4 +1,4 @@
-# Front-End - API Restful
+# Servidor - API Restful
 
 ### Link de Acesso
 Acesse este [link](https://projeto-api-restful.onrender.com/api/products) e confira se existem produtos cadastrados no banco de
